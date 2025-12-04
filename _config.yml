@@ -1,0 +1,25 @@
+title: CYCLOPATHIA
+description: Новости мира велоспорта и околовелосипедной культуры
+author: Ваше имя
+baseurl: ""
+url: "https://yourusername.github.io"
+
+# Build settings
+markdown: kramdown
+permalink: /:year/:month/:title/
+
+# Pagination
+paginate: 10
+paginate_path: "/page/:num/"
+plugins:
+  - jekyll-paginate
+
+# Social links
+social:
+  facebook: "https://www.facebook.com/Cyclopathia/"
+  instagram: "https://instagram.com/cyclopathia/"
+
+# Slider settings (featured posts for slider)
+slider:
+  autoplay: true
+  speed: 7000
