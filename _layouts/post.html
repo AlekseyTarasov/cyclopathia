@@ -1,0 +1,50 @@
+---
+layout: default
+---
+<section class="site-main">
+    <div class="site-container">
+        <div class="site-row">
+            <div class="site-content">
+                <article class="post-single">
+                    {% if page.image %}
+                    <div class="post-image">
+                        <img src="{{ page.image }}" alt="{{ page.title }}">
+                    </div>
+                    {% endif %}
+                    
+                    <header class="post-header">
+                        {% if page.categories %}
+                        <div class="post-meta">
+                            <span class="post-cat">
+                                {% for category in page.categories %}
+                                <a href="{{ site.baseurl }}/category/{{ category | slugify }}/">{{ category }}</a>
+                                {% endfor %}
+                            </span>
+                        </div>
+                        {% endif %}
+                        
+                        <h1 class="post-title">{{ page.title }}</h1>
+                        
+                        <div class="post-meta">
+                            <span class="post-date">{{ page.date | date: "%d.%m.%Y" }}</span>
+                        </div>
+                    </header>
+                    
+                    <div class="post-content">
+                        {{ content }}
+                    </div>
+                    
+                    {% if page.tags %}
+                    <footer class="post-footer">
+                        <div class="post-tags">
+                            {% for tag in page.tags %}
+                            <span class="tag">{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+                    </footer>
+                    {% endif %}
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
