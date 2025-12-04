@@ -1,0 +1,29 @@
+<div class="site-banner">
+    <div class="banner-carousel">
+        <div class="banner-slides">
+            {% assign featured_posts = site.posts | where: "featured", true | limit: 5 %}
+            {% for post in featured_posts %}
+            <div class="banner-slide">
+                <div class="banner-image" style="background-image: url('{{ post.image }}')"></div>
+                <div class="banner-overlay"></div>
+                <div class="banner-content">
+                    <div class="site-container">
+                        <h2 class="banner-title">
+                            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <button class="banner-prev" aria-label="Предыдущий слайд">‹</button>
+        <button class="banner-next" aria-label="Следующий слайд">›</button>
+        
+        <div class="banner-dots">
+            {% for post in featured_posts %}
+            <button class="banner-dot{% if forloop.first %} active{% endif %}" data-slide="{{ forloop.index0 }}"></button>
+            {% endfor %}
+        </div>
+    </div>
+</div>
