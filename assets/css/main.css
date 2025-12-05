@@ -7,7 +7,7 @@
 
 /* Variables */
 :root {
-    --primary-color: #bf9e3b;
+    --primary-color: #FE3233;
     --text-color: #333;
     --bg-color: #fff;
     --border-color: #ddd;
@@ -30,7 +30,7 @@ a {
 }
 
 a:hover {
-    color: #9a7e2f;
+    color: #d02728;
 }
 
 img {
@@ -262,6 +262,8 @@ img {
 /* Post Preview */
 .post-preview {
     text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 40px;
 }
 
 .post-thumb {
@@ -307,18 +309,40 @@ img {
     line-height: 1.8;
 }
 
+/* Post Footer */
+.post-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
 .read-more {
     display: inline-block;
     padding: 10px 30px;
-    border: 1px solid var(--border-color);
-    margin-top: 20px;
+    background: #000;
+    color: white;
     transition: all 0.3s ease;
 }
 
 .read-more:hover {
     background: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
+}
+
+.post-views {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #999;
+    font-size: 0.9em;
+}
+
+.post-views svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
 }
 
 /* Single Post */
@@ -416,6 +440,51 @@ img {
     color: #999;
 }
 
+/* Search Widget */
+.widget-search {
+    margin-bottom: 40px;
+}
+
+.search-form {
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 45px 12px 15px;
+    border: 1px solid var(--border-color);
+    font-size: 14px;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.search-submit-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #999;
+}
+
+.search-submit {
+    display: none;
+}
+
+.screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .site-logo h1 {
@@ -443,5 +512,11 @@ img {
         width: 40px;
         height: 40px;
         font-size: 2em;
+    }
+    
+    .post-footer {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
     }
 }
