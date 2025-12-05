@@ -3,6 +3,18 @@
         <div class="site-container">
             <div class="site-row">
                 <div class="site-column">
+                    <div class="widget widget-search">
+                        <h6>Стучите, и откроют вам</h6>
+                        <form role="search" method="get" class="search-form" action="{{ '/search/' | relative_url }}">
+                            <label class="screen-reader-text" for="s">Найти:</label>
+                            <input type="text" value="" placeholder="Поиск..." name="q" id="s" class="search-input">
+                            <label for="searchsubmit" class="search-submit-icon">🔍</label>
+                            <input type="submit" id="searchsubmit" value="Поиск" class="search-submit">
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="site-column">
                     <h6>Свежие записи</h6>
                     <ul>
                         {% for post in site.posts limit:5 %}
